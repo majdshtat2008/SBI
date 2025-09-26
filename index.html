@@ -1,0 +1,221 @@
+    <button id="scrollTopBtn" title="العودة للأعلى">↑</button>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشغل SBI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-offer-bar">
+        <marquee direction="right" scrollamount="6">
+            عروض حصرية لفترة محدودة: خصومات تصل حتى 30% على جميع منتجات مشغل SBI! | توصيل مجاني للطلبات فوق 30 دينار | هدايا مميزة لأول 50 طلب!
+        </marquee>
+    </div>
+    <header>
+        <div class="header-right">
+            <div class="logo">
+                <span>SBI</span>
+            </div>
+            <a href="account.html" id="settings-btn" title="إعدادات الحساب">
+                <span style="font-size:1.7rem; color:#d81b60;">⚙️</span>
+            </a>
+        </div>
+    <button id="darkModeToggle" title="تبديل الوضع الليلي" class="darkmode-btn">🌙</button>
+    <nav>
+            <ul>
+                <li><a href="login.html">تسجيل الدخول / إنشاء حساب</a></li>
+                <li><a href="#products">الأصناف</a></li>
+                <li><a href="#order">الطلب والاستفسار</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+                <li><a href="#review">تقييم المشغل</a></li>
+                <li><a href="#cart">سلة المشتريات <span id="cart-count" class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about" class="about-section animate-fade">
+    <section id="testimonials" class="testimonials-section animate-fade">
+        <h2>آراء عملائنا</h2>
+        <div class="testimonials-list">
+            <div class="testimonial-card">
+                <div class="testimonial-text">"منتجات رائعة وخدمة سريعة جداً! أنصح الجميع بالتجربة."</div>
+                <div class="testimonial-author">- آية من عمان</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"الخامة ممتازة والتوصيل كان بنفس اليوم. شكراً SBI!"</div>
+                <div class="testimonial-author">- سارة من الزرقاء</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">"أجمل بيجامات اشتريتها أونلاين، الأسعار مناسبة جداً."</div>
+                <div class="testimonial-author">- رهف من إربد</div>
+            </div>
+        </div>
+    </section>
+        <div class="about-content">
+            <h2>من نحن</h2>
+            <p>
+                مشغل SBI هو وجهتك الأولى لأجمل وأجود البيجامات، التايدات، البديهات والستاتي في الأردن. نؤمن أن الراحة والأناقة تبدأ من المنزل، ولهذا نقدم لكِ تشكيلات عصرية تناسب جميع الأذواق والفصول، مع ضمان أعلى جودة وخدمة عملاء مميزة. خبرتنا الطويلة في مجال الألبسة المنزلية جعلتنا الخيار المفضل للكثير من السيدات والعائلات. جربي منتجاتنا اليوم وتمتعي بعروضنا الحصرية وخدمة التوصيل السريعة!
+            </p>
+        </div>
+    </section>
+    <main>
+        <section id="featured" class="featured-section animate-fade">
+            <h2>الأكثر مبيعاً / المميزة</h2>
+            <div class="products-list">
+                <div class="product-card pajama-winter">
+                    <div class="product-logo">SBI</div>
+                    <h3>بيجامة شتوي مميزة</h3>
+                    <button onclick="addToCart('بيجامة شتوي مميزة')">أضف للسلة</button>
+                    <div class="share-bar">
+                        <button class="share-btn whatsapp" onclick="shareProduct(event, 'بيجامة شتوي مميزة', 'whatsapp')" title="مشاركة على واتساب">واتساب</button>
+                        <button class="share-btn facebook" onclick="shareProduct(event, 'بيجامة شتوي مميزة', 'facebook')" title="مشاركة على فيسبوك">فيسبوك</button>
+                    </div>
+                </div>
+                <div class="product-card tie-dye">
+                    <div class="product-logo">SBI</div>
+                    <h3>تايداي مميز</h3>
+                    <button onclick="addToCart('تايداي مميز')">أضف للسلة</button>
+                    <div class="share-bar">
+                        <button class="share-btn whatsapp" onclick="shareProduct(event, 'تايداي مميز', 'whatsapp')" title="مشاركة على واتساب">واتساب</button>
+                        <button class="share-btn facebook" onclick="shareProduct(event, 'تايداي مميز', 'facebook')" title="مشاركة على فيسبوك">فيسبوك</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="products" class="animate-fade">
+            <h2>الأصناف</h2>
+            <div class="search-bar">
+                <input type="text" id="productSearch" placeholder="ابحث عن منتج..." oninput="searchProducts()">
+            </div>
+            <div class="filters-bar">
+                <button class="filter-btn active" onclick="filterProducts('all')">الكل</button>
+                <button class="filter-btn" onclick="filterProducts('pajama-winter')">بيجامات شتوي</button>
+                <button class="filter-btn" onclick="filterProducts('pajama-summer')">بيجامات صيفي</button>
+                <button class="filter-btn" onclick="filterProducts('tie-dye')">تايدات</button>
+                <button class="filter-btn" onclick="filterProducts('bodysuit')">بديهات</button>
+                <button class="filter-btn" onclick="filterProducts('staty')">ستاتي</button>
+            </div>
+            <div class="products-list">
+                <div class="product-card pajama-winter">
+                    <div class="product-logo">SBI</div>
+                    <h3>بيجامة شتوي</h3>
+                    <button onclick="addToCart('بيجامة شتوي')">أضف للسلة</button>
+                    <div class="share-bar">
+                        <button class="share-btn whatsapp" onclick="shareProduct(event, 'بيجامة شتوي', 'whatsapp')" title="مشاركة على واتساب">واتساب</button>
+                        <button class="share-btn facebook" onclick="shareProduct(event, 'بيجامة شتوي', 'facebook')" title="مشاركة على فيسبوك">فيسبوك</button>
+                    </div>
+                </div>
+                <div class="product-card pajama-summer">
+                    <div class="product-logo">SBI</div>
+                    <h3>بيجامة صيفي</h3>
+                    <button onclick="addToCart('بيجامة صيفي')">أضف للسلة</button>
+                    <div class="share-bar">
+                        <button class="share-btn whatsapp" onclick="shareProduct(event, 'بيجامة صيفي', 'whatsapp')" title="مشاركة على واتساب">واتساب</button>
+                        <button class="share-btn facebook" onclick="shareProduct(event, 'بيجامة صيفي', 'facebook')" title="مشاركة على فيسبوك">فيسبوك</button>
+                    </div>
+                </div>
+                <div class="product-card tie-dye">
+                    <div class="product-logo">SBI</div>
+                    <h3>تايدات</h3>
+                    <button onclick="addToCart('تايدات')">أضف للسلة</button>
+                    <div class="share-bar">
+                        <button class="share-btn whatsapp" onclick="shareProduct(event, 'تايدات', 'whatsapp')" title="مشاركة على واتساب">واتساب</button>
+                        <button class="share-btn facebook" onclick="shareProduct(event, 'تايدات', 'facebook')" title="مشاركة على فيسبوك">فيسبوك</button>
+                    </div>
+                </div>
+                <div class="product-card bodysuit">
+                    <div class="product-logo">SBI</div>
+                    <h3>بديهات</h3>
+                    <button onclick="addToCart('بديهات')">أضف للسلة</button>
+                    <div class="share-bar">
+                        <button class="share-btn whatsapp" onclick="shareProduct(event, 'بديهات', 'whatsapp')" title="مشاركة على واتساب">واتساب</button>
+                        <button class="share-btn facebook" onclick="shareProduct(event, 'بديهات', 'facebook')" title="مشاركة على فيسبوك">فيسبوك</button>
+                    </div>
+                </div>
+                <div class="product-card staty">
+                    <div class="product-logo">SBI</div>
+                    <h3>ستاتي</h3>
+                    <button onclick="addToCart('ستاتي')">أضف للسلة</button>
+                    <div class="share-bar">
+                        <button class="share-btn whatsapp" onclick="shareProduct(event, 'ستاتي', 'whatsapp')" title="مشاركة على واتساب">واتساب</button>
+                        <button class="share-btn facebook" onclick="shareProduct(event, 'ستاتي', 'facebook')" title="مشاركة على فيسبوك">فيسبوك</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section id="order" class="animate-fade">
+            <h2>الطلب والاستفسار</h2>
+            <form id="orderForm" onsubmit="sendOrder(event)">
+                <input type="text" name="name" placeholder="الاسم" required>
+                <input type="text" name="phone" placeholder="رقم الهاتف" required>
+                <textarea name="details" placeholder="اكتب طلبك أو استفسارك" required></textarea>
+                <button type="submit">إرسال عبر واتساب</button>
+            </form>
+        </section>
+
+        <section id="faq" class="animate-fade">
+            <h2>الأسئلة الشائعة</h2>
+            <div class="faq-list">
+                <div class="faq-item accordion">
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">ما هي طرق الدفع المتوفرة؟</button>
+                    <div class="accordion-panel"><p>الدفع عند الاستلام فقط حالياً.</p></div>
+                </div>
+                <div class="faq-item accordion">
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">هل يوجد توصيل لجميع المناطق؟</button>
+                    <div class="accordion-panel"><p>نعم، التوصيل متاح لجميع المناطق داخل الأردن.</p></div>
+                </div>
+                <div class="faq-item accordion">
+                    <button class="accordion-btn" onclick="toggleAccordion(this)">هل يمكن استبدال أو استرجاع المنتجات؟</button>
+                    <div class="accordion-panel"><p>يسمح الاستبدال بعد شراء القطعة لمدة 48 ساعة فقط من تاريخ الاستلام مع وجود الفاتورة الأصلية.</p></div>
+                </div>
+            </div>
+        </section>
+
+    <section id="review" class="animate-fade">
+            <h2>تقييم المشغل</h2>
+            <form id="reviewForm" onsubmit="sendReview(event)">
+                <input type="text" name="name" placeholder="اسمك (اختياري)">
+                <textarea name="review" placeholder="اكتب تقييمك هنا" required></textarea>
+                <button type="submit">إرسال التقييم</button>
+            </form>
+        </section>
+
+    <section id="cart" class="animate-fade">
+            <h2>سلة المشتريات</h2>
+            <ul id="cartList"></ul>
+            <button onclick="sendCart()">إرسال الطلب عبر واتساب</button>
+        </section>
+
+
+
+    </main>
+    <a href="https://wa.me/962781874983" class="whatsapp-float" target="_blank" title="تواصل معنا على واتساب">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" class="whatsapp-icon">
+        <span class="whatsapp-text">اتصل بنا</span>
+    </a>
+    <section id="policy" class="policy-section animate-fade">
+        <h2>سياسة الاستبدال والاسترجاع</h2>
+        <div class="policy-content">
+            <p>
+                يسمح الاستبدال بعد شراء القطعة لمدة <strong>48 ساعة فقط</strong> من تاريخ الاستلام، بشرط أن تكون القطعة بحالتها الأصلية ولم تُستخدم أو تُغسل، مع وجود الفاتورة الأصلية. لا يمكن استرجاع المبلغ النقدي بعد الشراء.
+            </p>
+        </div>
+    </section>
+    <section id="contact" class="contact-section animate-fade">
+        <h2>تواصل معنا</h2>
+        <div class="contact-content">
+            <p>
+                <strong>العنوان:</strong> سوق اربد عند موقف باصات الحي الشرقي<br>
+                <strong>واتساب:</strong> <a href="https://wa.me/962781874983" target="_blank" style="color:#d81b60;">0781874983</a>
+            </p>
+        </div>
+    </section>
+    <footer>
+    <p>جميع الحقوق محفوظة &copy; مشغل SBI 2025</p>
+    <p style="color:#d81b60; font-size:1.05rem; margin-top:0.7rem;">تم تصميم وتطوير هذا الموقع بواسطة المبرمج مجد الدين شتات و سيدرا خالد</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول أو إنشاء حساب - SBI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { display: flex; align-items: center; justify-content: center; height: 100vh; background: #fff; }
+        .login-container { background: #fff; border: 2px solid #d81b60; border-radius: 16px; box-shadow: 0 4px 32px #f8bbd0; padding: 2rem 1.5rem; min-width: 320px; }
+        .login-container h2 { color: #d81b60; text-align: center; }
+        .login-container form { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>تسجيل الدخول أو إنشاء حساب</h2>
+        <form id="loginForm" onsubmit="login(event)">
+            <input type="text" name="username" placeholder="اسم المستخدم" required>
+            <input type="password" name="password" placeholder="كلمة السر" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+        <form id="registerForm" onsubmit="register(event)">
+            <input type="text" name="newUsername" placeholder="اسم المستخدم الجديد" required>
+            <input type="password" name="newPassword" placeholder="كلمة السر الجديدة" required>
+            <input type="text" name="newPhone" placeholder="رقم الهاتف" required>
+            <button type="submit">إنشاء حساب</button>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
